@@ -1,0 +1,12 @@
+{
+  "name" : "checklist-api",
+  "version" : "0.0.1",
+  "private" : true,
+  "scripts" : {
+      "start" : "node app.js",
+    "restart" : "nodemon app.js"
+  },
+  "dependencies" : {
+    "nodemon" : "^1.2.1"
+  }
+}
