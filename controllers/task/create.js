@@ -7,7 +7,7 @@ module.exports = (function() {
     var newTask = {
       title       : req.body.title,
       description : req.body.description,
-      status      : req.body.status,
+      status      : false,
       updatedAt   : Date.now(),
       createdAt   : Date.now()
     };
