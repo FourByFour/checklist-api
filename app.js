@@ -4,8 +4,7 @@ var express       = require('express'),
     dotenv        = require('dotenv'),
     config        = require('./config'),
     errorhandler  = require('errorhandler'),
-    app           = express(),
-    routes        = require('./routes')(app);
+    app           = express();
 
 if ('development' == app.get('env')) {
   app.use(errorhandler());
@@ -16,6 +15,8 @@ mongoose.connect(config.database().mongo_uri);
 
 app.use(bodyParser.json());
 app.set("port", config.server.port);
+
+var routes = require('./routes')(app);
 
 app.listen(app.get("port"), function() {
   console.log("Checklist API is listening on port " + app.get("port") +
