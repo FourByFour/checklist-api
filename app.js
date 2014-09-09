@@ -1,8 +1,18 @@
-var express     = require('express'),
-    app         = express(),
-    config      = require('./config'),
-    bodyParser  = require('body-parser'),
-    routes      = require('./routes')(app);
+var express       = require('express'),
+    mongoose      = require('mongoose'),
+    bodyParser    = require('body-parser'),
+    dotenv        = require('dotenv'),
+    config        = require('./config'),
+    errorhandler  = require('errorhandler'),
+    app           = express(),
+    routes        = require('./routes')(app);
+
+if ('development' == app.get('env')) {
+  app.use(errorhandler());
+  dotenv.load();
+};
+
+mongoose.connect(config.database().mongo_uri);
 
 app.use(bodyParser.json());
 app.set("port", config.server.port);
