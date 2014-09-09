@@ -12,10 +12,10 @@ var taskSchema = new Schema({
   status: {
     type: Boolean
   },
-  updated_at: {
+  updatedAt: {
     type: Number
   },
-  created_at: {
+  createdAt: {
     type: Number
   }
 }); 
