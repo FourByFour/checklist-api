@@ -1,6 +1,12 @@
+var Task = require('../../models/task');
+
 module.exports = (function() {
   // GET /users
   return function all(req, res, next) {
-    res.json({"tasks" : "Show all tasks"});
-  }
+    Task.find(function(err, tasks) {
+      if (err) res.json(err);
+      console.log("Show all tasks");
+      res.json(tasks);
+    });
+  };
 })();
