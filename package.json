@@ -8,6 +8,8 @@
   },
   "dependencies": {
     "body-parser": "^1.8.1",
+    "dotenv": "^0.4.0",
+    "errorhandler": "^1.2.0",
     "express": "^4.8.8",
     "mongoose": "^3.8.16",
     "nodemon": "^1.2.1"
