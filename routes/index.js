@@ -3,13 +3,23 @@ var controller = require('../controllers'),
 
 module.exports = function(app){
 
+  // GET /
   app.get('/',function(req, res, next) {
     res.json({"welcome" : "welcome to the checklist API"})
   });
 
-  app.get('/tasks',task.all);
-  app.post('/tasks',task.create);
-  app.get('/tasks/:id',task.show);
-  app.put('/tasks/:id',task.update);
-  app.delete('/tasks/:id',task.destroy);
+  // GET /users
+  app.get('/tasks', task.all);
+
+  // POST /tasks
+  app.post('/tasks', task.create);
+
+  // GET /tasks/:id
+  app.get('/tasks/:id', task.show);
+
+  // UPDATE /tasks/:id
+  app.put('/tasks/:id', task.update);
+
+  // DELETE /tasks/:id
+  app.delete('/tasks/:id', task.destroy);
 };
