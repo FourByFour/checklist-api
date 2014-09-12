@@ -1,5 +1,7 @@
+// Using Mongoose Task model schema
 var Task = require('../../models/task');
 
+// Exporting a closure via the module pattern.
 module.exports = (function() {
 
   // POST /tasks
@@ -12,6 +14,8 @@ module.exports = (function() {
       createdAt   : Date.now()
     };
 
+    // Inserting a new task into MongoDB
+    // via Mongoose create method.
     Task.create(newTask, function(err) {
       if (err) return handleError(err);
     });

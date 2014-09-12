@@ -1,6 +1,9 @@
+// Using Mongoose Task model schema
 var Task = require('../../models/task');
 
+// Exporting a closure via the module pattern.
 module.exports = (function() {
+
   // DELETE /tasks/:id
   return function destroy(req, res, next) {
     var id = req.params.id;
@@ -9,7 +12,7 @@ module.exports = (function() {
     }, function(err, task) {
       if (err) res.json(err);
       console.log('\nDestroying task with id: ' + id + '\n');
-      res.json({status: "Destroyed task - " + id});
+      res.json({status: "Destroyed task: " + id});
     });
   }
 })()

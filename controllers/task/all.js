@@ -1,5 +1,7 @@
+// Using Mongoose Task model schema
 var Task = require('../../models/task');
 
+// Exporting a closure via the module pattern.
 module.exports = (function() {
   // GET /users
   return function all(req, res, next) {
